@@ -1,0 +1,12 @@
+*.sdf
+*.suo
+*.opensdf
+*.db
+*.VC.db
+*.opendb
+Debug/
+Release/
+ipch/
+.vs/
+*.user
+*.dmp
