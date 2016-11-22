@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data_structure.h" />
+    <ClInclude Include="ifstream_file.h" />
     <ClInclude Include="json_loader.h" />
     <ClInclude Include="KUF3Math.h" />
     <ClInclude Include="kuf3packet_header.h" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="data_structure.cpp" />
+    <ClCompile Include="ifstream_file.cpp" />
     <ClCompile Include="json_loader.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="ofstream_file.cpp" />

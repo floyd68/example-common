@@ -10,24 +10,11 @@
 using namespace std;
 using namespace _system;
 
-ofstream_file::ofstream_file(const wchar_t* directory_name, const wchar_t* file_name) : _is_opened(false), _last_file_no(0)
+ofstream_file::ofstream_file(const wchar_t* directory_name, const wchar_t* file_name)
+	: _is_opened(false), _last_file_no(0), _directory_path(fs::current_path() / directory_name)
 {
-#ifdef _UNICODE
 	_name = wstring(file_name);
-	wstring _directory_name = wstring(directory_name);
-
 	_write.imbue(locale("kor"));
-#else
-	_name = M2W(file_name);
-	wstring _directory_name = M2W(directory_name);
-	_write.imbue(locale("kor"));
-#endif
-	_directory_path = fs::current_path();
-	if (false == _directory_name.empty())
-	{
-		_directory_path = _directory_path / _directory_name.c_str();
-	}
-	
 	fs::create_directories(_directory_path);
 }
 
