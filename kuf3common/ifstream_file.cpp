@@ -27,7 +27,7 @@ bool ifstream_file::read_all(__out vec_files& files)
 	vec_file file;
 	do
 	{
-		force_read_file(find_data.cFileName, file);
+		force_read_file(find_data.cFileName, __out file);
 		files.emplace(find_data.cFileName, file);
 		file.clear();
 	} while (FindNextFile(handle, &find_data));
@@ -66,6 +66,6 @@ bool ifstream_file::open(const wchar_t* file_name)
 	if (file_name == nullptr)
 		return false;
 
-	_read.open(_directory_path / file_name, ios_base::app);
+	_read.open(_directory_path / file_name, ios_base::in);
 	return _read.is_open();
 }
