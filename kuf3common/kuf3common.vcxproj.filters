@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="file_io">
-      <UniqueIdentifier>{7e859d9c-ebd0-40c4-a426-b2c4e909ced4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -54,17 +51,26 @@
     <ClInclude Include="logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ofstream_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="time_util_utc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="str_util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ofstream_file.h">
-      <Filter>file_io</Filter>
-    </ClInclude>
     <ClInclude Include="ifstream_file.h">
-      <Filter>file_io</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entity_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -86,11 +92,11 @@
     <ClCompile Include="logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ifstream_file.cpp">
-      <Filter>file_io</Filter>
-    </ClCompile>
     <ClCompile Include="ofstream_file.cpp">
-      <Filter>file_io</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ifstream_file.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
