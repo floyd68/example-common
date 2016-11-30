@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "logger.h"
 #include "time_util_utc.h"
+#include <chrono>
+#include <iomanip>
 
 const int _1MB = 1048576;
 
+using namespace chrono;
 using namespace _system;
 
 logger::logger(const wchar_t* directory_name, const wchar_t* file_name)
@@ -61,8 +64,10 @@ void logger::put(log_level lev, const wchar_t* func, const int line, const wchar
 
 	wstring logtxt(log_txt);
 
+	auto t = system_clock::to_time_t(system_clock::now());
+	auto cur_time = put_time(localtime(&t), L"%H:%M:%S:%MS");
 	wchar_t location[128] = { 0, };
-	wsprintfW(location, L"[%s][%s][%d][%s] ", log_str(), get_current_date_by_HH_MM_SS_MIL().c_str(), line, func);
+	wsprintfW(location, L"%s %s %d %s ", log_str(), cur_time, line, func);
 
 	logtxt.insert(0, location);
 	insert(logtxt.c_str());
